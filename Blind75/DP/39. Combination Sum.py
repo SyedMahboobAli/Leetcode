@@ -11,7 +11,7 @@ class Solution:
                     dp[t].append(new_comb)
         return dp[target]
 '''
-This is throwing error. Memory Limit Exceeded
+This is throwing error. Memory Limit Exceeded. this is similar to coin change solution. If you need count, you can use it or use backtracking pick/don't pick solution.
 
 Count combinations	DP
 Print all combinations	✅ Backtracking (LeetCode #39)
