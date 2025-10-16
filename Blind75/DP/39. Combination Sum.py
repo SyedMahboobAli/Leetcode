@@ -19,8 +19,8 @@ Each number used once (no repeats)	Backtracking + skip duplicates (LeetCode #40)
 '''
 
 # Backtracking Solution
-# Better backtracking understandable solution is given at the end ✅ Recommended
-class Solution:
+#  ✅ Recommended approach
+class Solution: 
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
        
         res=[]
@@ -44,7 +44,7 @@ class Solution:
         backtrack(0,target,[])
         return res
         '''
-Better soluion 
+another approach  
         class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
