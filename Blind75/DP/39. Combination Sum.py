@@ -20,7 +20,7 @@ Each number used once (no repeats)	Backtracking + skip duplicates (LeetCode #40)
 
 # Backtracking Solution
 #  ✅ Recommended approach
-class Solution: 
+class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
        
         res=[]
@@ -44,28 +44,28 @@ class Solution:
         backtrack(0,target,[])
         return res
         '''
-another approach  
+other approach
         class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
 
-        def backtrack(start, target, path):
-            # Base Case: if target is zero, we found a valid combination
-            if target == 0:
-                res.append(path[:])
+        def dfs(i, curr, total):
+            # Base cases
+            if total == target:
+                res.append(curr[:])
                 return
-            # Explore from current index onwards
-            for i in range(start, len(candidates)):
-                if candidates[i] > target:
-                    continue
-                # Choose the number
-                path.append(candidates[i])
-                # Since we can reuse same number, pass i instead of i+1
-                backtrack(i, target - candidates[i], path)
-                # Backtrack
-                path.pop()
+            if i >= len(candidates) or total > target:
+                return
 
-        backtrack(0, target, [])
+            # Include the candidate (reuse allowed)
+            curr.append(candidates[i])
+            dfs(i, curr, total + candidates[i])
+
+            # Exclude the candidate
+            curr.pop()
+            dfs(i + 1, curr, total)
+
+        dfs(0, [], 0)
         return res
        '''
        
