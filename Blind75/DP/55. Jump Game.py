@@ -52,6 +52,7 @@ class Solution:
             for j in range(i+1,furthest_element+1):
                 if dp[j]:
                     dp[i]=True
+                    break
             
         return dp[0]
 
