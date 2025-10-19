@@ -44,7 +44,7 @@ class Solution:
         backtrack(0,target,[])
         return res
         '''
-other approach
+other approach without for loop and more understandable
         class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
