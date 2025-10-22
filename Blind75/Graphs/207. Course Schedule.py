@@ -6,7 +6,7 @@ class Solution:
         for crs,pre in prerequisites:
             adj[crs].append(pre)
         
-        # visited states: 
+        # visited states:  Note: we can also use a set for this. We can add the number while visiting. if number in set => return False. At last remove from set.
         # 0 = unvisited, 1 = visiting (in current recursion stack), 2 = visited (fully processed)
         visited = [0 for _ in range(numCourses)] # or [0] * numCourses
 
