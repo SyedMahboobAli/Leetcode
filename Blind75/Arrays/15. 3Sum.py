@@ -18,7 +18,6 @@ class Solution:
                     ans.append([nums[i],nums[low],nums[high]])
                     low+=1
                     high-=1
-                    #no break here because there might be more combinations with same offset
                     #2whiles next to avoid duplicates in tuplets
                     while(low<high and nums[low] == nums[low-1]):
                         low+=1
