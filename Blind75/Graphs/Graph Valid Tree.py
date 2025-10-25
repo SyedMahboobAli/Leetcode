@@ -42,3 +42,49 @@ class Solution:
 
         # After DFS, check if all nodes were visited (ensures connectivity)
         return len(visit) == n
+'''
+Notes:
+BFS answer:
+
+from collections import deque
+
+class Solution:
+    def validTree(self, n: int, edges: list[list[int]]) -> bool:
+        if len(edges) != n - 1:
+            return False
+
+        adj = [[] for _ in range(n)]
+        for a, b in edges:
+            adj[a].append(b)
+            adj[b].append(a)
+
+        seen = [False]*n
+        # BFS from node 0
+        q = deque([0])
+        seen[0] = True
+        count = 0
+        while q:
+            node = q.popleft()
+            count += 1
+            for nei in adj[node]:
+                if not seen[nei]:
+                    seen[nei] = True
+                    q.append(nei)
+
+        return count == n  # all nodes reachable
+
+We are not using parent here
+
+In this specific BFS implementation, it doesn’t explicitly check for cycles, because the len(edges) != n-1 check already guarantees:
+
+If there are more than n-1 edges → there must be a cycle.
+
+If there are fewer than n-1 edges → graph is disconnected.
+
+So with n-1 edges, the only remaining condition to check is connectivity, which the BFS does via count == n.
+
+✅ If the graph is connected and has exactly n-1 edges, it must be a tree.
+No explicit cycle check needed!
+
+✅ BFS doesn’t need a parent argument because it never revisits nodes (due to seen[]), and the len(edges) == n-1 condition already rules out cycles.
+'''
