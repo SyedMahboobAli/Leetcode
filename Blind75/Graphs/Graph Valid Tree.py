@@ -7,7 +7,7 @@ class Solution:
         if len(edges) != n - 1:
             return False
 
-        # Build adjacency list representation of the graph
+        # Build adjacency list representation of the graph, and we are using [[]] because the vertices are from 0 to n-1 and not different numbers/letters. then we would use dictionary
         adj = [[] for _ in range(n)]
         for a, b in edges:
             adj[a].append(b)
