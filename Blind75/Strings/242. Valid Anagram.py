@@ -7,7 +7,7 @@ class Solution:
         #solution 3
         if(len(s)!=len(t)):
             return False
-        countS,countT={},{}
+        countS,countT={},{} # use defaultdict instead to avoid key not found error
         for i in range(len(s)):
             countS[s[i]]=1+countS.get(s[i],0) #countS[s[i]] is previously not present error key not found. So .get() would initialize the value instead.
             countT[t[i]]=1+countT.get(t[i],0)
