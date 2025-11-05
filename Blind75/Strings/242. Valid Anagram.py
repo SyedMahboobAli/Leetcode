@@ -14,5 +14,5 @@ class Solution:
         for c in countS:
             if(countS[c]!=countT.get(c,0)):#countT.get(c,0) to avoid key not found error again
                 return False
-        #instead of line 11 to 13, you can return countS==countT
+        #instead of line 14 to 16, you can return countS==countT
         return True
