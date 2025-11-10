@@ -11,7 +11,7 @@ class Solution:
         inorder_map = {val:ind for ind,val in enumerate(inorder)}
         self.pre_ind = 0 # pointer to current root in preorder
 
-        def dfs(left,right):
+        def dfs(left,right):#These left/right are indices into the inorder array, not into preorder. instead of slicing preorder) avoids copying preorder
             # if there are no elements to construct subtrees
             if(left>right):
                 return
