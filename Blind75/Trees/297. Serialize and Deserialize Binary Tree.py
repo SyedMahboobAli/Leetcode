@@ -54,7 +54,7 @@ class Codec:
         self.i = 0
 
         def dfs():
-            if vals[self.i] == "N":
+            if vals[self.i] == "null":
                 self.i += 1
                 return None
             node = TreeNode(int(vals[self.i]))
