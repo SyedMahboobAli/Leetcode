@@ -37,3 +37,11 @@ class Solution:
         
         dfs(root)
         return res[k-1] # 1-indexed
+
+'''
+# in recursion solution, we can also do this to stop storing more values in the array
+            self.count += 1
+            if self.count == k:
+                self.res = node.val
+                return
+'''
