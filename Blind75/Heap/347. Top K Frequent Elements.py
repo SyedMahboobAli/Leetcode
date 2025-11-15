@@ -1,5 +1,5 @@
 #This is more of a array problem.
-for Heaps check : Merge K Sorted Lists, Find Median from Data Stream ,etc
+#for Heaps check : Merge K Sorted Lists, Find Median from Data Stream ,etc
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         d={}
