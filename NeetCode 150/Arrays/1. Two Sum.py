@@ -29,3 +29,18 @@ class Solution:
                 return [i,hashmap[complement]]
             hashmap[nums[i]]=i   
         return []
+
+#using enumerate function:
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {} # value -> index
+
+        for i,num in enumerate(nums):
+            diff = target - num
+
+            if(diff in seen):
+                return [i,seen[diff]]
+
+            seen[num] = i
+            
+        return []
