@@ -19,7 +19,7 @@ class Solution:
             while s[j] != '#':
                 j += 1
             length = int(s[i:j])  # get length
-            word = s[j + 1:j + 1 + length]  # get the actual string
+            word = s[j + 1:j + 1 + length]  # get the actual string, j is pointing to #
             res.append(word)
             i = j + 1 + length  # move pointer
         return res
