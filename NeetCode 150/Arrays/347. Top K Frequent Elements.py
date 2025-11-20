@@ -1,3 +1,16 @@
+#Solution 1: heap best beats 100%
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        d= Counter(nums)
+        heap=[]
+        for num,freq in d.items():
+            heapq.heappush(heap,(freq,num)) # adding tuple the heap
+            if (len(heap) > k): #always the heap is len k, and we are popping least freq num, so always we have max freq number in heap
+                heapq.heappop(heap)
+        return [tup[1] for tup in heap]
+
+
+#Solution 2:
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         d={}
@@ -24,4 +37,6 @@ class Solution:
                 res.append(num)
                 if(len(res)==k):
                     return res
+
+
         
