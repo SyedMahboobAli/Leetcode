@@ -7,6 +7,7 @@ class Solution:
                 profit=prices[r]-prices[l]
                 maxp=max(maxp,profit)
             else:
+                #changing the window now. Prev window max is done
                 l=r
             r+=1
         return maxp
