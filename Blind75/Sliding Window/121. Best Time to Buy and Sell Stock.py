@@ -9,6 +9,7 @@ class Solution:
             else:
                 #changing the window now. Prev window max is done
                 l=r
+            #at any case move r forward
             r+=1
         return maxp
 
