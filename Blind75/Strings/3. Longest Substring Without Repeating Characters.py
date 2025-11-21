@@ -22,7 +22,7 @@ class Solution:
 
         for r in range(len(s)):
             if s[r] in mp:
-                l = max(mp[s[r]] + 1, l) # Move left pointer past the duplicate
+                l = max(mp[s[r]] + 1, l) # Move left pointer past the duplicate. And if we don't use max here, we might move the l backwards, and we might end up getting duplicates because current comparison is with only curr character
             mp[s[r]] = r
             res = max(res, r - l + 1)
         return res
