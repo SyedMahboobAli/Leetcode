@@ -11,11 +11,11 @@ class Solution:
         water = 0 
 
         while (l<r):
-            #Whichever side has the smaller boundary will decide how much water can be trapped and we add water one index at a time
+            #Whichever side has the smaller boundary will decide how much water can be trapped and we add water at one index at a time
             if leftmax < rightmax:
                 #we are doing l+ here and r- first as we are not including the edges => 0 and n-1 index. At the edges (first and last index), there is no boundary on one side, so they can never trap water. even if we use the formula we get 0. so no use. hence skipping.
                 l += 1
-                leftmax = max(leftmax,height[l]) # this will have highest until now and also will handle next line where leftmax - height[l] will not go -ve if height[l] is more and leftmax is left. so we are not adding -ve to water
+                leftmax = max(leftmax,height[l]) # this will have highest until now and also will handle next line where leftmax - height[l] will not go -ve if height[l] is more and leftmax is less. so we are not adding -ve to water
                 water += leftmax - height[l]
             else:
                 r -= 1
