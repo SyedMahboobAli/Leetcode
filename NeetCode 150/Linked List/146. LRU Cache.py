@@ -46,7 +46,7 @@ class LRUCache:
     def put(self, key: int, value: int) -> None:
         if key in self.cache:
             self._remove(self.cache[key])
-        
+        #We only create a new node in put func and not in insert or get
         node = ListNode(key,value)
         self.cache[key] = node
         self._insert(node)
