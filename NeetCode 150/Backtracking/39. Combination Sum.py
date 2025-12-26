@@ -7,6 +7,7 @@ class Solution:
         def backtrack(start,total):
             if total == 0:
                 res.append(subset.copy())
+                return
 
             for i in range(start,len(candidates)):
                 if candidates[i] > total:
