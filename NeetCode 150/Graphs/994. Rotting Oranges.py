@@ -2,7 +2,7 @@ class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:        
         rows,cols = len(grid), len(grid[0])
         q = deque()
-        minutes = 0
+        minutes = 0 #this is 0 indexed, so return minutes - 1 at the end
         fresh = 0
         # Step 1: count fresh oranges & enqueue rotten ones
         for i in range(rows):
