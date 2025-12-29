@@ -1,5 +1,6 @@
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        #Topological Sort using BFS
         graph = [[] for _ in range(numCourses)]
         indegree = [0] * numCourses
 
