@@ -16,7 +16,7 @@ class Solution:
 
             for dr,dc in ((0,1),(0,-1),(1,0),(-1,0)):
                 nr,nc = r+dr, c+dc
-                #This condition can be checked on in the loop and not in dfs due to heights check. it needs two cells:nr,nc and r,c. If we want to check this is dfs, we should send one more parameter
+                #This condition can't be checked on in the loop and not in dfs due to heights check. it needs two cells:nr,nc and r,c. If we want to check this is dfs, we should send one more parameter
                 if 0<=nr<rows and 0<=nc<cols and not visited[nr][nc] and heights[nr][nc]>=heights[r][c]:
                     dfs(nr,nc,visited)
         
