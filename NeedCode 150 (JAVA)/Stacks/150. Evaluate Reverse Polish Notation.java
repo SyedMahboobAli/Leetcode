@@ -9,7 +9,7 @@ class Solution {
             else if(token.equals("-")){
                 int b = stack.pop();
                 int a = stack.pop();
-                stack.push(b-a);
+                stack.push(a-b);
             }
             else if (token.equals("*")){
                 stack.push(stack.pop() * stack.pop());
