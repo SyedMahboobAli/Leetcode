@@ -23,3 +23,6 @@ class Solution {
         }
     }
 }
+
+//We start the loop from start so we do not generate duplicates like [2,3] and [3,2].
+//Why backtrack(i, ...)? Because each number can be used multiple times. or else we would have done i+1 if no multiple usage
