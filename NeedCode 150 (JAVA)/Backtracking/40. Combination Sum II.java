@@ -11,6 +11,7 @@ class Solution {
     private void backtrack(int start, int[] candidates, int target){
         if(target == 0){
             res.add(new ArrayList<>(subset));
+            return;
         }
 
         for(int i = start;i<candidates.length;i++){
